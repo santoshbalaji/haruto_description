@@ -1,24 +1,149 @@
-<sdf version='1.5'>
-    <!-- Draw Circle -->
-    <model name='ros_symbol'>
-        <static>true</static>
+<sdf version="1.5">
+    <model name="haruto_robot">
+        <static>false</static>
+
+        <!-- construct chasis for the robot -->
         <link name='chassis'>
           <pose>0 0 .1 0 0 0</pose>
           <collision name='collision'>
             <geometry>
               <box>
-                <size>.4 .2 .1</size>
+                <size>.8 .3 .1</size>
               </box>
             </geometry>
           </collision>
-
           <visual name='visual'>
             <geometry>
               <box>
-                <size>.4 .2 .1</size>
+                <size>.8 .3 .1</size>
               </box>
             </geometry>
           </visual>
         </link>
+
+        <!-- construct back left wheel for robot -->
+        <link name="back_left_wheel">
+          <pose>0.25 0.18 0.1 0 1.5707 1.5707</pose>
+          <collision name="collision">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </visual>
+        </link>
+
+        <!-- construct back right wheel for robot -->
+        <link name="back_right_wheel">
+          <pose>0.25 -0.18 0.1 0 1.5707 1.5707</pose>
+          <collision name="collision">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </visual>
+        </link>
+
+        <!-- construct front left wheel for robot -->
+        <link name="front_left_wheel">
+          <pose>-0.25 0.18 0.1 0 1.5707 1.5707</pose>
+          <collision name="collision">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </visual>
+        </link>
+
+        <!-- construct front right wheel for robot -->
+        <link name="front_right_wheel">
+          <pose>-0.25 -0.18 0.1 0 1.5707 1.5707</pose>
+          <collision name="collision">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </collision>
+          <visual name="visual">
+            <geometry>
+              <cylinder>
+                <radius>.1</radius>
+                <length>.05</length>
+              </cylinder>
+            </geometry>
+          </visual>
+        </link>
+
+      <!-- joint for back left wheel of revolute type rotates about y axis -->
+      <joint type="revolute" name="back_left_wheel_hinge">
+        <pose>0 0 -0.03 0 0 0</pose>
+        <child>back_left_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+      <!-- joint for back right wheel of revolute type rotates about y axis -->
+      <joint type="revolute" name="back_right_wheel_hinge">
+        <pose>0 0 0.03 0 0 0</pose>
+        <child>back_right_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+      <!-- joint for front left wheel of revolute type rotates about y axis -->
+      <joint type="revolute" name="front_left_wheel_hinge">
+        <pose>0 0 -0.03 0 0 0</pose>
+        <child>front_left_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+      <!-- joint for front right wheel of revolute type rotates about y axis -->
+      <joint type="revolute" name="front_right_wheel_hinge">
+        <pose>0 0 0.03 0 0 0</pose>
+        <child>front_right_wheel</child>
+        <parent>chassis</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
     </model>
 </sdf>
