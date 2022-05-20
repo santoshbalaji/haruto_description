@@ -128,7 +128,7 @@
       <!-- Adding sensor scan field configuration -->
       <sensor type="gpu_ray" name="laser">
         <pose>0 0 0.22 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>10</update_rate>
         <ray>
           <scan>
@@ -195,7 +195,6 @@
         </plugin>
       </sensor>
     </link>
-
 
     <!-- joint for back left wheel of revolute type rotates about y axis -->
     <joint type="revolute" name="back_left_wheel_hinge">
