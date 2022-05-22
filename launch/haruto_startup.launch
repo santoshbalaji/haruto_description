@@ -21,9 +21,17 @@
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">
-        <param name="initial_pose_x" value="-7.32" />
+        <!-- <param name="initial_pose_x" value="-7.32" />
         <param name="initial_pose_y" value="6.69" />
-        <param name="initial_pose_a" value="1.3" />
+        <param name="initial_pose_a" value="1.3" /> -->
     </node>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find haruto_description)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find haruto_description)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find haruto_description)/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find haruto_description)/config/global_costmap_params.yaml" command="load" /> 
+        <rosparam file="$(find haruto_description)/config/base_local_planner_params.yaml" command="load" />
+     </node>
 
 </launch>
