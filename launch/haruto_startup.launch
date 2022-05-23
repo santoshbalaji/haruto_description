@@ -21,9 +21,9 @@
     <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" />
 
     <node pkg="amcl" type="amcl" name="amcl">
-        <!-- <param name="initial_pose_x" value="-7.32" />
-        <param name="initial_pose_y" value="6.69" />
-        <param name="initial_pose_a" value="1.3" /> -->
+        <param name="initial_pose_x" value="-3.984081533823289" />
+        <param name="initial_pose_y" value="4.892056917728655" />
+        <param name="initial_pose_a" value="-0.17518429434983698" />
     </node>
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
