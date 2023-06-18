@@ -73,7 +73,7 @@
         <wheel_diameter>0.035</wheel_diameter>
         <wheel_diameter>0.035</wheel_diameter>
 
-        <max_wheel_torque>200</max_wheel_torque>
+        <max_wheel_torque>50</max_wheel_torque>
         <max_wheel_acceleration>10.0</max_wheel_acceleration>
 
         <odometry_frame>odom</odometry_frame>
