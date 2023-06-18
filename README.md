@@ -17,7 +17,17 @@ This repository is for haruto robot related urdf model
   colcon build --packages-select haruto_description
 ```
 
-- To visualize the robto 
+- To visualize the robot in rviz
 ```
-  ros2 launch haruto_description visualize_robot.launch.py
+  ros2 launch haruto_description visualize_robot_standalone.launch.py
+```
+
+- To visualize the robot in gazebo and rviz (for omnidirectional robot)
+```
+  ros2 launch haruto_description visualize_robot_simulation.launch.py robot_type:=omni
+```
+
+- To visualize the robot in gazebo and rviz (for differential robot)
+```
+  ros2 launch haruto_description visualize_robot_simulation.launch.py robot_type:=diff
 ```
