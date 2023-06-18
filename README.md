@@ -31,3 +31,10 @@ This repository is for haruto robot related urdf model
 ```
   ros2 launch haruto_description visualize_robot_simulation.launch.py robot_type:=diff
 ```
+
+
+#### Working video 
+
+[![Omni directional drive robot](https://img.youtube.com/vi/hTd9ykmecRg/0.jpg)](https://youtu.be/hTd9ykmecRg)
+
+[![Differential drive robot](https://img.youtube.com/vi/BXSWMmkk77E/0.jpg)](https://youtu.be/BXSWMmkk77E)
