@@ -62,6 +62,7 @@ def launch_setup(context, *args, **kwargs):
     executable="rviz2",
     name="rviz2",
     output="log",
+    parameters=[{"use_sim_time": True}],
     arguments=["-d", rviz_config_file],
   )
 
@@ -100,7 +101,7 @@ def generate_launch_description():
   declared_arguments.append(
     DeclareLaunchArgument(
       "robot_type",
-      default_value="omni",
+      default_value="diff",
       description="Type of robot to visualize (Available options: omni, diff)",
     )
   )
